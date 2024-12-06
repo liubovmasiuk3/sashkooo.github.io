@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>З днем народження, Чемпіон!</title>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/bYkUQiz.jpeg'); /* Set background image */
+            background-size: cover; /* Ensure the background image covers the entire screen */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Keep the background fixed when scrolling */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling on the body */
+        }
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-size: 3.5em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgba(208, 255, 0, 0.839);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to make text clearer */
+        }
+        button {
+            background-color: blue;
+            color: white;
+            font-size: 1.5em;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgb(170, 226, 0);
+            transform: scale(1.1); /* Button grows when hovered */
+        }
+        .images-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            overflow-y: auto; /* Enable scrolling */
+            max-height: 80vh; /* Limit container height */
+            width: 100%;
+        }
+        .image-item {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .image-item img {
+            max-width: 50%;  /* Reduce the image size */
+            height: auto;
+            border-radius: 10px;
+        }
+        .image-item h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for subtitles */
+        }
+        .image-item.show {
+            display: block;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            button {
+                font-size: 1.2em;
+                padding: 15px 30px;
+            }
+            .images-container {
+                width: 100%;
+            }
+            .image-item img {
+                max-width: 60%;  /* Adjust image size for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            .images-container {
+                width: 100%;
+            }
+            .image-item img {
+                max-width: 70%;  /* Adjust image size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="center-container">
+        <h1>З днем народження, Сашуня!</h1>
+        <button onclick="showImages()">Тицьни тут</button>
+
+        <div class="images-container">
+            <div class="image-item" id="image1">
+                <h2>Бажаю тобі море веселощів</h2>
+                <img src="https://i.imgur.com/VhMc5T1.jpeg" alt="Бажаю тобі море веселощів">
+            </div>
+            <div class="image-item" id="image2">
+                <h2>Здійснення всіх мрій</h2>
+                <img src="https://i.imgur.com/yE8cLnv.jpeg" alt="Здійснення всіх мрій">
+            </div>
+            <div class="image-item" id="image3">
+                <h2>Будь здоровий</h2>
+                <img src="https://i.imgur.com/GsGxLeB.jpeg" alt="Будь здоровий">
+            </div>
+            <div class="image-item" id="image4">
+                <h2>І щасливий</h2>
+                <img src="https://i.imgur.com/rZ6OWMy.jpeg" alt="І щасливий">
+            </div>
+            <div class="image-item" id="image5">
+                <h2>Обіймаю і люблю тебе</h2>
+                <img src="https://i.imgur.com/mNl4l1I.jpeg" alt="Обіймаю і люблю тебе">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showImages() {
+            // Show each image one by one without any effects
+            for (let i = 1; i <= 5; i++) {
+                const imageElement = document.getElementById('image' + i);
+                imageElement.classList.add('show'); // Show each image without any fade-in effect
+            }
+        }
+    </script>
+
+</body>
+</html>
